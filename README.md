@@ -1,3 +1,5 @@
+Requires Yabber, though sekiroDubi and Nordgaren's Yabber+ (https://github.com/sekirodubi/YabberPlus) is preferable as it is easy to mass compress/decompress anibnd.dcx files with it.
+
 Purpose: Many mods for Elden Ring, such as 
 
 Sword Mastery (https://www.nexusmods.com/eldenring/mods/1890), 

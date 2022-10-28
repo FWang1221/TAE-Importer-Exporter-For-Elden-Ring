@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,7 +29,7 @@ namespace ConsoleApp4
             System.Buffer.BlockCopy(speedOne, 0, speederGradient, 0, speedOne.Length);
             System.Buffer.BlockCopy(speedTwo, 0, speederGradient, speedOne.Length, speedTwo.Length);
 
-            foreach (BinderFile file in bnd.Files) //This entire section of foreach loops was stolen from Gomp's RumbleCamID tool
+            //foreach (BinderFile file in bnd.Files) //This entire section of foreach loops was stolen from Gomp's RumbleCamID tool
             {
                 IEnumerable<BinderFile> taeFiles = bnd.Files.Where(x => x.Name.Contains(".tae"));
 
@@ -84,10 +84,10 @@ namespace ConsoleApp4
 
                 }
 
-                if (iamacaveman)
-                {
-                    break;
-                }
+                //if (iamacaveman)
+                //{
+                //    break;
+                //}
             }
             bnd.Write(pathThing, DCX.Type.None);
             Console.WriteLine("Finished with file at " + pathThing + "\nWould you like to choose a new directory (d), a new file (f), or quit (q)?");

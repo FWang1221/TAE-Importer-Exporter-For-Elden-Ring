@@ -11,11 +11,9 @@ namespace ConsoleApp4
 {
     class Program
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Directory for your animation please? \nExample, C:\\Program Files (x86)\\Steam\\steamapps\\common\\ELDEN RING\\Game\\mod\\chr\\c4290.anibnd.dcx \nYou must have opened your animation file with DSAS first and saved it properly before you run the program on your file.");
-            string path = Console.ReadLine();
-            BND4 bnd = BND4.Read(path);
+        static void startScraping(string pathThing, string oldPath) {
+
+            BND4 bnd = BND4.Read(pathThing);
             List<string> animSpeedNums = new List<string>();
             List<string> attackStartTimes = new List<string>();
             Boolean iamacaveman = false;
@@ -68,38 +66,64 @@ namespace ConsoleApp4
                                 }
                             }
 
-                            if (ev.Type == 66) {
-                                Console.WriteLine(BitConverter.ToInt32(ev.GetParameterBytes(tae.BigEndian), 0));
-
-                                if (BitConverter.ToInt32(ev.GetParameterBytes(tae.BigEndian), 0) == 1234567890) {
-                                    attackStartTimes.Add("End \n" + anim.ID);
-                                    iamacaveman = true;
-                                }
-                            }
-
-                            if (iamacaveman) {
+                            if (iamacaveman)
+                            {
                                 break;
                             }
                         }
-                        if (iamacaveman) {
+                        if (iamacaveman)
+                        {
                             break;
                         }
                     }
                     taeFile.Bytes = tae.Write();
-                    if (iamacaveman) {
+                    if (iamacaveman)
+                    {
                         break;
                     }
 
                 }
-                
-                if (iamacaveman) {
+
+                if (iamacaveman)
+                {
                     break;
                 }
             }
-            bnd.Write(path, DCX.Type.None);
+            bnd.Write(pathThing, DCX.Type.None);
+            Console.WriteLine("Finished with file at " + pathThing + "\nWould you like to choose a new directory (d), a new file (f), or quit (q)?");
+            string answer = Console.ReadLine();
+
+            if (answer == "d")
+            {
+                Console.WriteLine("Directory for your yabber please? \nExample, C:\\Users\\Francis Wang\\Downloads\\Yabber+\\Yabber+ \nYou must have opened your anibnd.dcx file with Yabber first before you run the program on your file. Then after the program is done, you must recompress it in Yabber, plop it back to your directory, and you are set.");
+                string path = Console.ReadLine();
+                Console.WriteLine("Which anibnd do you want to modify? \nExample, c4290.anibnd");
+                string thePath = path + "\\" + Console.ReadLine();
+                startScraping(thePath, path);
+            }
+            else if (answer == "f")
+            {
+                Console.WriteLine("Which anibnd do you want to modify? \nExample, c2500.anibnd");
+                string thePath2 = oldPath + "\\" + Console.ReadLine();
+                startScraping(thePath2, oldPath);
+            }
+            else {
+                Console.WriteLine("Bye bye!");
+                System.Threading.Thread.Sleep(1000);
+                System.Environment.Exit(1);
+            }
             //File.WriteAllLines($"C:/Program Files (x86)/Steam/steamapps/common/ELDEN RING/Game/mod/chr/animLines.txt", animSpeedNums.Select(x => x.ToString()));
-            File.WriteAllLines($"C:/Program Files (x86)/Steam/steamapps/common/ELDEN RING/Game/mod/chr/animAttackTimes.txt", attackStartTimes.Select(x => x.ToString()));
-            System.Threading.Thread.Sleep(20000);
+            //File.WriteAllLines($"C:/Program Files (x86)/Steam/steamapps/common/ELDEN RING/Game/mod/chr/animAttackTimes.txt", attackStartTimes.Select(x => x.ToString()));
+
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Directory for your yabber please? \nExample, C:\\Users\\Francis Wang\\Downloads\\Yabber+\\Yabber+ \nYou must have opened your anibnd.dcx file with Yabber first before you run the program on your file. \nThen after the program is done, you must recompress it in Yabber, plop it back to your directory, and you are set.");
+            string path = Console.ReadLine();
+            Console.WriteLine("Which anibnd do you want to modify? \nExample, c4290.anibnd");
+            string thePath = path + "\\" + Console.ReadLine();
+            startScraping(thePath, path);
+
         }
     }
 }

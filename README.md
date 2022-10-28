@@ -8,9 +8,25 @@ Moveset Animation Remix's (https://www.nexusmods.com/eldenring/mods/920),
 
 and Clever's Moveset Modpack (https://www.nexusmods.com/eldenring/mods/1928)
 
-feature greatly enhanced player speeds, however they do not enhance enemy speeds to compensate, leading to a fundamental balancing disparity. This is made worse by the fact that enemies in Elden Ring frequently have long delays. This tool (? Sort of a tool?) aims to fix that by providing easy speed-up gradients to the start of enemy attacks and projectile spawns to make combat feel less one-sided.
+feature greatly enhanced player speeds, however they do not enhance enemy speeds to compensate, leading to a fundamental balancing disparity. This is made worse by the fact that enemies in Elden Ring frequently have long delays. This tool (? Sort of a tool?) aims to fix that by providing easy speed-up gradients to the start of enemy attacks and projectile spawns to make combat feel less one-sided. In the space of less than an hour, you can modify the startup speeds of every single enemy in the game.
 
 Instructions: Open the Program.cs in Visual Studio, click "Run", and follow the instructions on the Console.
+
+Further functionalities planned...
+
+Adding support for a more realistic jumping animation for enemies,
+
+Lengthening the Blend frames for animations slightly on certain attacks,
+
+Reducing the amount of downtime between enemy attacks,
+
+Adding a berserk mode for certain attacks,
+
+Adding random delays to certain attacks, with a user-controlled percentage.
+
+Adding the spEffect of your choice if an enemy is in the air (for Dynamic Camera mods) or before an attack (user-controlled, for Perilous Attacks in Deflect mods).
+
+Adding downtime after certain big attacks.
 
 Many thanks to the following...
 

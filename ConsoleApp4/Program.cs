@@ -114,7 +114,7 @@ namespace ConsoleApp4 //Sorry to anyone who wants to read code written by a fuck
                 animSpeedGradients.speederGradientDelay = new byte[animSpeedGradients.speedOneDelay.Length + animSpeedGradients.speedTwoDelay.Length];
                 System.Buffer.BlockCopy(animSpeedGradients.speedOneDelay, 0, animSpeedGradients.speederGradientDelay, 0, animSpeedGradients.speedOneDelay.Length);
                 System.Buffer.BlockCopy(animSpeedGradients.speedTwoDelay, 0, animSpeedGradients.speederGradientDelay, animSpeedGradients.speedOneDelay.Length, animSpeedGradients.speedTwoDelay.Length);
-                Console.WriteLine("Every attack will now have a " + animSpeedGradients.delayPercentage + " percent chance to delay. \nDelay speed gradients are " + animSpeedGradients.speedOneDelay + " and " + animSpeedGradients.speedTwoDelay + ".");
+                Console.WriteLine("Every attack will now have a " + animSpeedGradients.delayPercentage + " percent chance to delay. \nDelay speed gradients are " + BitConverter.ToSingle(animSpeedGradients.speedOneDelay, 0) + " and " + BitConverter.ToSingle(animSpeedGradients.speedTwoDelay, 0) + ".");
             }
             Console.WriteLine("Do you wish to add perilous attacks on jumping attacks? (y/n)? ");
             if (Console.ReadLine() == "y")

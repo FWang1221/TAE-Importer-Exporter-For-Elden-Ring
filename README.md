@@ -14,7 +14,7 @@ feature greatly enhanced player speeds, however they do not enhance enemy speeds
 
 Recommended usage is for modifying minibosses and mook enemies, not for actual bosses.
 
-Instructions: Open the Program.cs in Visual Studio, click "Run", and follow the instructions on the Console.
+Instructions: Open the Program.cs in Visual Studio, click "Run", and follow the instructions on the Console. Video of the process is here https://streamable.com/jasyrw
 
 Further functionalities planned...
 

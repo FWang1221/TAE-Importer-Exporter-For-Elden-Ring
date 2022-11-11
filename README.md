@@ -22,7 +22,7 @@ c4500
 
 c2500
 
-" (without the parenthesis, of course.)
+" (without the parenthesis, or the double spaces, only single spaces please.)
 
 Templates (not actual .bt stuff but the template templates, y'know) have been provided for the files.
 

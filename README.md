@@ -1,4 +1,4 @@
-Requires Yabber, though sekiroDubi and Nordgaren's Yabber+ (https://github.com/sekirodubi/YabberPlus) is preferable as it is easy to mass compress/decompress anibnd.dcx files with it.
+Requires the oodle core in your game directory to be in the lib for where you have your stuff.
 
 Purpose: Many mods for Elden Ring, such as 
 
@@ -14,25 +14,13 @@ feature greatly enhanced player speeds, however they do not enhance enemy speeds
 
 Recommended usage is for modifying minibosses and mook enemies, not for actual bosses.
 
-Instructions: Open the Program.cs in Visual Studio, click "Run", and follow the instructions on the Console. Video of the process is here https://streamable.com/jasyrw
+Instructions: Open the Program.cs in Visual Studio, click "Run", and follow the instructions on the Console. You should put a text file in your directory containing names of files you want to export, like "
+c4290
+c4500
+c2500
+" (without the parenthesis, of course.)
 
-Further functionalities planned...
-
-Adding support for a more realistic jumping animation speed for enemies,
-
-Lengthening the Blend frames for animations slightly on certain attacks (functional but not super adjustable),
-
-Reducing the amount of downtime between enemy attacks (semi-functional),
-
-Adding a berserk mode for certain attacks (functional as adding JumpTable 86 after an attack but adding a stateInfo doesn't appear to work),
-
-Adding random delays to certain attacks, with a user-controlled percentage (functionality added).
-
-Adding the spEffect of your choice if an enemy is in the air (for Dynamic Camera mods) or before an attack (user-controlled, for Perilous Attacks in Deflect mods).
-
-Adding Perilous Attack spEffects (semi-functional).
-
-Adding downtime after certain big attacks.
+Templates (not actual .bt stuff but the template templates, y'know) have been provided for the files.
 
 Many thanks to the following...
 

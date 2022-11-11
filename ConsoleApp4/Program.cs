@@ -336,12 +336,12 @@ namespace ConsoleApp4 //Sorry to anyone who wants to read code written by a fuck
         }
         static void startScraping(string oldPath) {
             
-            Console.WriteLine("Do you wish to access the export function? (y/n)");
+            Console.WriteLine("Do you wish to access the export function? \n(This exports your file to the directory as cXXXXEventFiles.csv) (y/n)");
             if (Console.ReadLine() == "y")
             {
                 extractParams(oldPath);
             }
-            Console.WriteLine("Do you wish to access the import function? (y/n/s)");
+            Console.WriteLine("Do you wish to access the import function? (y/n/s)\nImporting will check the animation files reader to import the files. Files must follow the example template. \ns is for 'seed', your file in the directory must be named 'SwordMasSeed.csv' and should follow the formatting as seen on the example.");
             string answer = Console.ReadLine();
             if (answer == "y")
             {
@@ -357,7 +357,7 @@ namespace ConsoleApp4 //Sorry to anyone who wants to read code written by a fuck
         }
         static void Main(string[] args)
         {
-            Console.WriteLine("Directory for your yabber please? \nExample, C:\\Users\\Francis Wang\\Downloads\\Yabber+\\Yabber+ \nYou must have opened your anibnd.dcx file with Yabber first before you run the program on your file. \nThen after the program is done, you must recompress it in Yabber, plop it back to your directory, and you are set.");
+            Console.WriteLine("Enter the directory for your chr files? \nExample, C:\\Program Files (x86)\\Steam\\steamapps\\common\\ELDEN RING\\Game\\mod\\chr ");
             string path = Console.ReadLine();
             startScraping(path);
 

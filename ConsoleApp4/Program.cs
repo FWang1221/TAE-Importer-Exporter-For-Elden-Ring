@@ -14,17 +14,33 @@ namespace ConsoleApp4 //Sorry to anyone who wants to read code written by a fuck
         static void extractParamsMany(string directoryHere, string oldDir, List<string> paramTypes, int eventTypeNum)
         {
             
-            BND4 bnd = BND4.Read(oldDir + "/" + directoryHere + ".anibnd");
+            BND4 bnd = BND4.Read(oldDir + "/" + directoryHere + ".anibnd.dcx");
             IEnumerable<BinderFile> taeFiles = bnd.Files.Where(x => x.Name.Contains(".tae"));
             List<string> eventReader = new List<string>();
             eventReader.Add("Animation ID, StartTime, EndTime, " + string.Join(",", paramTypes));
+            //List<string> eventGroupReader = new List<string>();
+            //eventGroupReader.Add("GroupType, GroupData.Area, GroupData.Block, GroupData.CutsceneEntityIDPart1, GroupData.CutsceneEntityIDPart2, GroupData.CutsceneEntityType, GroupData.DataType");
             List<string> eventReaderLine = new List<string>();
+            //List<string> eventGroupReaderLine = new List<string>();
             foreach (var taeFile in taeFiles.Where(x => x.Bytes.Length > 0))
             {
                 TAE tae = TAE.Read(taeFile.Bytes);
                 for (int i1 = 0; i1 < tae.Animations.Count; i1++)
                 {
                     TAE.Animation anim = tae.Animations[i1];
+                    /*for (int i = 0; i < anim.EventGroups.Count; i++)
+                    {
+                        eventGroupReaderLine.Clear();
+                        TAE.EventGroup evg = anim.EventGroups[i];
+                        eventGroupReaderLine.Add(evg.GroupType.ToString());
+                        eventGroupReaderLine.Add(evg.GroupData.Area.ToString());
+                        eventGroupReaderLine.Add(evg.GroupData.Block.ToString());
+                        eventGroupReaderLine.Add(evg.GroupData.CutsceneEntityIDPart1.ToString());
+                        eventGroupReaderLine.Add(evg.GroupData.CutsceneEntityIDPart2.ToString());
+                        eventGroupReaderLine.Add(evg.GroupData.CutsceneEntityType.ToString());
+                        eventGroupReaderLine.Add(evg.GroupData.DataType.ToString());
+                        eventGroupReader.Add(string.Join(",", eventGroupReaderLine));
+                    }*/
                     for (int i = 0; i < anim.Events.Count; i++)
                     {
                         TAE.Event ev = anim.Events[i];
@@ -39,6 +55,8 @@ namespace ConsoleApp4 //Sorry to anyone who wants to read code written by a fuck
                             eventReaderLine.Add(anim.ID.ToString());
                             eventReaderLine.Add(ev.StartTime.ToString());
                             eventReaderLine.Add(ev.EndTime.ToString());
+                            //eventReaderLine.Add((Math.Floor(Math.Round(ev.StartTime * 30) / 3) * 3).ToString());
+                            //eventReaderLine.Add((Math.Floor(Math.Round(ev.EndTime * 30) / 3) * 3).ToString());
 
                             foreach (string dataType in paramTypes)
                             {
@@ -75,6 +93,7 @@ namespace ConsoleApp4 //Sorry to anyone who wants to read code written by a fuck
                 }
             }
             File.WriteAllLines(oldDir + "/" + directoryHere + "EventsFile.csv", eventReader.Select(x => x.ToString()));
+            //File.WriteAllLines(oldDir + "/" + directoryHere + "EventGroupsFile.csv", eventGroupReader.Select(x => x.ToString()));
         }
         static void extractParams(string oldPath)
         {
@@ -89,6 +108,7 @@ namespace ConsoleApp4 //Sorry to anyone who wants to read code written by a fuck
             {
                 extractParamsMany(line, oldPath, paramTypes, eventTypeNum);
             }
+            System.Threading.Thread.Sleep(10000);
             System.Environment.Exit(1);
         }
         
@@ -98,8 +118,8 @@ namespace ConsoleApp4 //Sorry to anyone who wants to read code written by a fuck
             List<string> lines = System.IO.File.ReadAllLines(path).ToList();
             List<string> header = lines[0].Split(',').ToList();
             int paramLength = 0;
-            BND4 bnd = BND4.Read(oldPath + "\\" + newPath + ".anibnd");
-            Console.WriteLine("Directory being edited is currently " + oldPath + "\\" + newPath + ".anibnd");
+            BND4 bnd = BND4.Read(oldPath + "\\" + newPath + ".anibnd.dcx");
+            Console.WriteLine("Directory being edited is currently " + oldPath + "\\" + newPath + ".anibnd.dcx");
             IEnumerable<BinderFile> taeFiles = bnd.Files.Where(x => x.Name.Contains(".tae"));
             foreach (string column in header.Skip(4)) {
                 if (column == "s32")
@@ -165,16 +185,18 @@ namespace ConsoleApp4 //Sorry to anyone who wants to read code written by a fuck
                                 }
                             }
                             TAE.Event addedEvent = new TAE.Event(float.Parse(line.Split(',')[2]), float.Parse(line.Split(',')[3]), int.Parse(line.Split(',')[1]), 0, rv, tae.BigEndian);
+                            addedEvent.Group = new TAE.EventGroup();
+                            addedEvent.Group.GroupType = long.Parse(line.Split(',')[1]);
                             anim.Events.Add(addedEvent);
-                            Console.WriteLine("New event type " + (float.Parse(line.Split(',')[1]).ToString() + " added at " + (float.Parse(line.Split(',')[2])).ToString() + " seconds and ending at " + (float.Parse(line.Split(',')[3])).ToString() + " seconds in in animation " + anim.ID.ToString()));
+                            Console.WriteLine("New event type " + (float.Parse(line.Split(',')[1]).ToString() + " added at " + float.Parse(line.Split(',')[2]) + " seconds and ending at " + float.Parse(line.Split(',')[3]) + " seconds in in animation " + anim.ID.ToString()));
                         }
                     }
                     taeFile.Bytes = tae.Write();
                     Console.WriteLine("TAE has been written over.");
                 }
             }
-            bnd.Write(oldPath + "\\" + newPath + ".anibnd", DCX.Type.None);
-            Console.WriteLine("File has been written over at " + oldPath + "\\" + newPath + ".anibnd");
+            bnd.Write(oldPath + "\\" + newPath + ".anibnd.dcx", DCX.Type.DCX_KRAK);
+            Console.WriteLine("File has been written over at " + oldPath + "\\" + newPath + ".anibnd.dcx");
         }
         static void importParams(string oldPath) {
             Console.WriteLine("Please give me the file directory for your list of anibnds you wish to import. \n C:\\Users\\Francis Wang\\Downloads\\Yabber+\\Yabber+\\importList.txt \nYour import list should have cXXXX on each line, so something like c4310 on the first line and c4290 on the second.");
@@ -183,6 +205,7 @@ namespace ConsoleApp4 //Sorry to anyone who wants to read code written by a fuck
             {
                 importParamsMany(oldPath, line);
             }
+            System.Threading.Thread.Sleep(10000);
             System.Environment.Exit(1);
         }
         static void startScraping(string oldPath) {
@@ -197,6 +220,7 @@ namespace ConsoleApp4 //Sorry to anyone who wants to read code written by a fuck
             {
                 importParams(oldPath);
             }
+            System.Threading.Thread.Sleep(10000);
             System.Environment.Exit(1);
         }
         static void Main(string[] args)

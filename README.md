@@ -15,9 +15,13 @@ feature greatly enhanced player speeds, however they do not enhance enemy speeds
 Recommended usage is for modifying minibosses and mook enemies, not for actual bosses.
 
 Instructions: Open the Program.cs in Visual Studio, click "Run", and follow the instructions on the Console. You should put a text file in your directory containing names of files you want to export, like "
+
 c4290
+
 c4500
+
 c2500
+
 " (without the parenthesis, of course.)
 
 Templates (not actual .bt stuff but the template templates, y'know) have been provided for the files.

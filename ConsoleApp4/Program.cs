@@ -21,7 +21,14 @@ namespace ConsoleApp4 //Sorry to anyone who wants to read code written by a fuck
             BND4 bnd = BND4.Read(oldDir + "/" + directoryHere + ".anibnd.dcx");
             IEnumerable<BinderFile> taeFiles = bnd.Files.Where(x => x.Name.Contains(".tae"));
             List<string> eventReader = new List<string>();
-            eventReader.Add("Name (for filtering purpose), Animation ID, StartTime, EndTime, " + string.Join(",", paramTypes));
+            if (directoryHere == "c0000")
+            {
+                eventReader.Add("Name (for filtering purpose), TAE, Animation ID, StartTime, EndTime, " + string.Join(",", paramTypes));
+            } else
+            {
+                eventReader.Add("Name (for filtering purpose), Animation ID, StartTime, EndTime, " + string.Join(",", paramTypes));
+            }
+            
             //List<string> eventGroupReader = new List<string>();
             //eventGroupReader.Add("GroupType, GroupData.Area, GroupData.Block, GroupData.CutsceneEntityIDPart1, GroupData.CutsceneEntityIDPart2, GroupData.CutsceneEntityType, GroupData.DataType");
             List<string> eventReaderLine = new List<string>();
@@ -56,6 +63,10 @@ namespace ConsoleApp4 //Sorry to anyone who wants to read code written by a fuck
 
                             eventReaderLine.Clear();
                             eventReaderLine.Add(directoryHere);
+                            if (directoryHere == "c0000")
+                            {
+                                eventReaderLine.Add(tae.ID.ToString());
+                            }
                             eventReaderLine.Add(anim.ID.ToString());
                             eventReaderLine.Add(ev.StartTime.ToString());
                             eventReaderLine.Add(ev.EndTime.ToString());
@@ -316,6 +327,114 @@ namespace ConsoleApp4 //Sorry to anyone who wants to read code written by a fuck
             
         }
 
+        static void importParamsPlayer(string oldPath, string newPath)
+        {
+            string path = oldPath + "\\" + newPath + "EventsFile.csv";
+            List<string> lines = System.IO.File.ReadAllLines(path).ToList();
+            List<string> header = lines[0].Split(',').ToList();
+            int paramLength = 0;
+            BND4 bnd = BND4.Read(oldPath + "\\" + newPath + ".anibnd.dcx");
+            Console.WriteLine("Directory being edited is currently " + oldPath + "\\" + newPath + ".anibnd.dcx");
+            IEnumerable<BinderFile> taeFiles = bnd.Files.Where(x => x.Name.Contains(".tae"));
+
+            Dictionary<string, BinderFile> taeDictionary = new Dictionary<string, BinderFile>();
+            foreach (var taeFile in taeFiles.Where(x => x.Bytes.Length > 0))
+            {
+                taeDictionary.Add((taeFile.ID - 5000000 + 2000).ToString(), taeFile);
+            }
+
+            foreach (string column in header.Skip(5))
+            {
+                if (column == "s32")
+                {
+                    paramLength += 4;
+                }
+                if (column == "s16")
+                {
+                    paramLength += 2;
+                }
+                if (column == "f32")
+                {
+                    paramLength += 4;
+                }
+                if (column == "b")
+                {
+                    paramLength += 1;
+                }
+                if (column == "u8")
+                {
+                    paramLength += 1;
+                }
+            }
+            foreach (string line in lines.Skip(1))
+            {
+                if (line[0] == 'c')
+                {
+                    newPath = line.Replace(",", "");
+                    break;
+                }
+                
+                TAE tae = TAE.Read(taeDictionary[line.Split(',')[0]].Bytes);
+                if (tae.ID.ToString() != line.Split(',')[0])
+                {
+                    continue;
+                }
+                for (int i1 = 0; i1 < tae.Animations.Count; i1++)
+                {
+                    if (tae.ID.ToString() != line.Split(',')[0])
+                    {
+                        break;
+                    }
+                    TAE.Animation anim = tae.Animations[i1];
+                    if (anim.ID.ToString() == line.Split(',')[1] && tae.ID.ToString() == line.Split(',')[0])
+                    {
+                        string[] paramLines = line.Split(',').ToArray();
+                        byte[] rv = new byte[paramLength];
+                        int offset = 0;
+                        for (int i = 5; i < header.Count(); i++)
+                        {
+                            if (header[i] == "s32")
+                            {
+                                System.Buffer.BlockCopy(BitConverter.GetBytes(Int32.Parse(paramLines[i])), 0, rv, offset, 4);
+                                offset += 4;
+                            }
+                            if (header[i] == "s16")
+                            {
+                                System.Buffer.BlockCopy(BitConverter.GetBytes(Int16.Parse(paramLines[i])), 0, rv, offset, 2);
+                                offset += 2;
+                            }
+                            if (header[i] == "f32")
+                            {
+                                System.Buffer.BlockCopy(BitConverter.GetBytes(Single.Parse(paramLines[i])), 0, rv, offset, 4);
+                                offset += 4;
+                            }
+                            if (header[i] == "b")
+                            {
+                                System.Buffer.BlockCopy(BitConverter.GetBytes(Boolean.Parse(paramLines[i])), 0, rv, offset, 1);
+                                offset += 1;
+                            }
+                            if (header[i] == "u8")
+                            {
+                                System.Buffer.BlockCopy(BitConverter.GetBytes(Byte.Parse(paramLines[i])), 0, rv, offset, 1);
+                                offset += 1;
+                            }
+                        }
+                        TAE.Event addedEvent = new TAE.Event(float.Parse(line.Split(',')[3]), float.Parse(line.Split(',')[4]), int.Parse(line.Split(',')[2]), 0, rv, tae.BigEndian);
+                        addedEvent.Group = new TAE.EventGroup();
+                        addedEvent.Group.GroupType = long.Parse(line.Split(',')[2]);
+                        anim.Events.Add(addedEvent);
+                        Console.WriteLine("New event type " + (float.Parse(line.Split(',')[2]).ToString() + " added at " + float.Parse(line.Split(',')[3]) + " seconds and ending at " + float.Parse(line.Split(',')[4]) + " seconds in animation " + anim.ID.ToString() + " in TAE " + tae.ID.ToString()));
+                            
+                    }
+                }
+                taeDictionary[line.Split(',')[0]].Bytes = tae.Write();
+                Console.WriteLine("TAE has been written over.");
+                
+            }
+            bnd.Write(oldPath + "\\" + newPath + ".anibnd.dcx", DCX.Type.DCX_KRAK);
+            Console.WriteLine("File has been written over at " + oldPath + "\\" + newPath + ".anibnd.dcx");
+        }
+
         static void importParams(string oldPath) {
             if (Globals.isSeed)
             {
@@ -327,7 +446,13 @@ namespace ConsoleApp4 //Sorry to anyone who wants to read code written by a fuck
             {
                 foreach (string line in lines)
                 {
-                    importParamsMany(oldPath, line);
+                    if (line != "c0000")
+                    {
+                        importParamsMany(oldPath, line);
+                    } else
+                    {
+                        importParamsPlayer(oldPath, line);
+                    }
                 }
             }
 

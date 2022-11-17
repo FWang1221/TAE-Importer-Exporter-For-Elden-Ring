@@ -26,9 +26,11 @@ c2500
 
 Templates (not actual .bt stuff but the template templates, y'know) have been provided for the files.
 
+Alternative usage can be for greatly increasing player speed, such as on horseback. Exporting and importing the c0000.anibnd should be done separately and not as part of a list or a seed.
+
 Many thanks to the following...
 
-Created with great help from Nordgaren (who wrote ~50% of the code and helped me learn Visual Studio) and Gomp-DS (whose GetRumbleCamIds https://github.com/GompDS/GetRumbleCamIds project was used as a base for this project).
+Created with great help from Nordgaren (who wrote ~50% of the draft code and helped me learn Visual Studio) and Gomp-DS (whose GetRumbleCamIds https://github.com/GompDS/GetRumbleCamIds project was used as a base for this project).
 
 Meowmaritus for providing SoulsAssetPipeline (https://github.com/Meowmaritus/SoulsAssetPipeline), and for tips and tricks on other TAE-related things.
 

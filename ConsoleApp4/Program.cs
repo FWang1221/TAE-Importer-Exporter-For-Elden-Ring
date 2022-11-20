@@ -99,6 +99,16 @@ namespace ConsoleApp4 //Sorry to anyone who wants to read code written by a fuck
                                 {
                                     eventReaderLine.Add(ev.GetParameterBytes(tae.BigEndian)[placeKeeper].ToString());
                                     placeKeeper += 1;
+                                }//no sbyte (s8), uh oh. no ushort either (u16)
+                                if (dataType == "u16")
+                                {
+                                    eventReaderLine.Add(BitConverter.ToUInt16(ev.GetParameterBytes(tae.BigEndian), placeKeeper).ToString());
+                                    placeKeeper += 2;
+                                }
+                                if (dataType == "s8")
+                                {
+                                    eventReaderLine.Add(((sbyte) ev.GetParameterBytes(tae.BigEndian)[placeKeeper]).ToString());
+                                    placeKeeper += 1;
                                 }
                             }
                             eventReader.Add(string.Join(",", eventReaderLine));
@@ -159,6 +169,14 @@ namespace ConsoleApp4 //Sorry to anyone who wants to read code written by a fuck
                 {
                     paramLength += 1;
                 }
+                if (column == "u16")
+                {
+                    paramLength += 2;
+                }
+                if (column == "s8")
+                {
+                    paramLength += 1;
+                }
             }
             foreach (string line in lines)
             {
@@ -205,12 +223,22 @@ namespace ConsoleApp4 //Sorry to anyone who wants to read code written by a fuck
                                     System.Buffer.BlockCopy(BitConverter.GetBytes(Byte.Parse(paramLines[i])), 0, rv, offset, 1);
                                     offset += 1;
                                 }
+                                if (header[i] == "u16")
+                                {
+                                    System.Buffer.BlockCopy(BitConverter.GetBytes(UInt16.Parse(paramLines[i])), 0, rv, offset, 1);
+                                    offset += 1;
+                                }
+                                if (header[i] == "s8")
+                                {
+                                    System.Buffer.BlockCopy(BitConverter.GetBytes(SByte.Parse(paramLines[i])), 0, rv, offset, 1);
+                                    offset += 1;
+                                }
                             }
                             TAE.Event addedEvent = new TAE.Event(float.Parse(line.Split(',')[2]), float.Parse(line.Split(',')[3]), int.Parse(line.Split(',')[1]), 0, rv, tae.BigEndian);
                             addedEvent.Group = new TAE.EventGroup();
                             addedEvent.Group.GroupType = long.Parse(line.Split(',')[1]);
                             anim.Events.Add(addedEvent);
-                            Console.WriteLine("New event type " + (float.Parse(line.Split(',')[1]).ToString() + " added at " + float.Parse(line.Split(',')[2]) + " seconds and ending at " + float.Parse(line.Split(',')[3]) + " seconds in in animation " + anim.ID.ToString()));
+                            Console.WriteLine("New event type " + (float.Parse(line.Split(',')[1]).ToString() + " added at " + float.Parse(line.Split(',')[2]) + " seconds and ending at " + float.Parse(line.Split(',')[3]) + " seconds in animation " + anim.ID.ToString()));
                         }
                     }
                     taeFile.Bytes = tae.Write();
@@ -249,6 +277,14 @@ namespace ConsoleApp4 //Sorry to anyone who wants to read code written by a fuck
                     paramLength += 1;
                 }
                 if (column == "u8")
+                {
+                    paramLength += 1;
+                }
+                if (column == "u16")
+                {
+                    paramLength += 2;
+                }
+                if (column == "s8")
                 {
                     paramLength += 1;
                 }
@@ -311,12 +347,22 @@ namespace ConsoleApp4 //Sorry to anyone who wants to read code written by a fuck
                                     System.Buffer.BlockCopy(BitConverter.GetBytes(Byte.Parse(paramLines[i])), 0, rv, offset, 1);
                                     offset += 1;
                                 }
+                                if (header[i] == "u16")
+                                {
+                                    System.Buffer.BlockCopy(BitConverter.GetBytes(UInt16.Parse(paramLines[i])), 0, rv, offset, 1);
+                                    offset += 1;
+                                }
+                                if (header[i] == "s8")
+                                {
+                                    System.Buffer.BlockCopy(BitConverter.GetBytes(SByte.Parse(paramLines[i])), 0, rv, offset, 1);
+                                    offset += 1;
+                                }
                             }
                             TAE.Event addedEvent = new TAE.Event(float.Parse(line.Split(',')[2]), float.Parse(line.Split(',')[3]), int.Parse(line.Split(',')[1]), 0, rv, tae.BigEndian);
                             addedEvent.Group = new TAE.EventGroup();
                             addedEvent.Group.GroupType = long.Parse(line.Split(',')[1]);
                             anim.Events.Add(addedEvent);
-                            Console.WriteLine("New event type " + (float.Parse(line.Split(',')[1]).ToString() + " added at " + float.Parse(line.Split(',')[2]) + " seconds and ending at " + float.Parse(line.Split(',')[3]) + " seconds in in animation " + anim.ID.ToString()));
+                            Console.WriteLine("New event type " + (float.Parse(line.Split(',')[1]).ToString() + " added at " + float.Parse(line.Split(',')[2]) + " seconds and ending at " + float.Parse(line.Split(',')[3]) + " seconds in animation " + anim.ID.ToString()));
                             break;
                         }
                     }
@@ -362,6 +408,14 @@ namespace ConsoleApp4 //Sorry to anyone who wants to read code written by a fuck
                     paramLength += 1;
                 }
                 if (column == "u8")
+                {
+                    paramLength += 1;
+                }
+                if (column == "u16")
+                {
+                    paramLength += 2;
+                }
+                if (column == "s8")
                 {
                     paramLength += 1;
                 }
@@ -416,6 +470,16 @@ namespace ConsoleApp4 //Sorry to anyone who wants to read code written by a fuck
                             if (header[i] == "u8")
                             {
                                 System.Buffer.BlockCopy(BitConverter.GetBytes(Byte.Parse(paramLines[i])), 0, rv, offset, 1);
+                                offset += 1;
+                            }
+                            if (header[i] == "u16")
+                            {
+                                System.Buffer.BlockCopy(BitConverter.GetBytes(UInt16.Parse(paramLines[i])), 0, rv, offset, 1);
+                                offset += 1;
+                            }
+                            if (header[i] == "s8")
+                            {
+                                System.Buffer.BlockCopy(BitConverter.GetBytes(SByte.Parse(paramLines[i])), 0, rv, offset, 1);
                                 offset += 1;
                             }
                         }

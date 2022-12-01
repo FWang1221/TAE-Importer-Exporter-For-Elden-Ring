@@ -39,3 +39,5 @@ AinTunez, whose fork (https://github.com/AinTunez/RoguelikeSouls) of Grimrukh's 
 JKAnderson (and his crew's) SoulsFormats (https://github.com/JKAnderson/SoulsFormats).
 
 Hopefully I got everyone, if you felt like you were part of this project's creation just ping me on Discord or something and I'll add you.
+
+*new Hemalurgical Spike function is highly experimental, requires slightly edited TAE.Animation.CS from SAP.

@@ -1,32 +1,8 @@
-Requires the oodle core in your game directory to be in the lib for where you have your stuff.
+Requires oodle core and .net 6.0.
 
-Purpose: Many mods for Elden Ring, such as 
+Many mods feature greatly enhanced player speeds, however they do not enhance enemy speeds to compensate, leading to a fundamental balancing disparity. This is made worse by the fact that enemies in Elden Ring frequently have long delays. This tool aims to fix that by providing easy speed-up gradients to the start of enemy attacks and projectile spawns to make combat feel less one-sided. In the space of less than an hour, you can modify the startup speeds of every single enemy in the game. You can also do Wondrous Physick setup with this, adding in many enemy interactions to the game.
 
-Sword Mastery (https://www.nexusmods.com/eldenring/mods/1890), 
-
-Call of the Abyss/Garden of Eyes/Faded Burn/Other Anime Movesets, 
-
-Moveset Animation Remix's (https://www.nexusmods.com/eldenring/mods/920),
-
-and Clever's Moveset Modpack (https://www.nexusmods.com/eldenring/mods/1928)
-
-feature greatly enhanced player speeds, however they do not enhance enemy speeds to compensate, leading to a fundamental balancing disparity. This is made worse by the fact that enemies in Elden Ring frequently have long delays. This tool (? Sort of a tool?) aims to fix that by providing easy speed-up gradients to the start of enemy attacks and projectile spawns to make combat feel less one-sided. In the space of less than an hour, you can modify the startup speeds of every single enemy in the game.
-
-Recommended usage is for modifying minibosses and mook enemies, not for actual bosses.
-
-Instructions: Open the Program.cs in Visual Studio, click "Run", and follow the instructions on the Console. You should put a text file in your directory containing names of files you want to export, like "
-
-c4290
-
-c4500
-
-c2500
-
-" (without the parenthesis, or the double spaces, only single spaces please.)
-
-Templates (not actual .bt stuff but the template templates, y'know) have been provided for the files.
-
-Alternative usage can be for greatly increasing player speed, such as on horseback. Exporting and importing the c0000.anibnd should be done separately and not as part of a list or a seed.
+Basic usage guide link: https://youtu.be/X8B83gmMmn8
 
 Many thanks to the following...
 

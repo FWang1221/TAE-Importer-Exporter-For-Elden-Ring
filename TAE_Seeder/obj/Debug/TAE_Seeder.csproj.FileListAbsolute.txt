@@ -1,0 +1,15 @@
+C:\Users\Francis Wang\Downloads\taeimporterseed\TAE-Importer-Exporter-For-Elden-Ring-realreleasenumberone\ConsoleApp4\bin\Debug\ConsoleApp4.exe.config
+C:\Users\Francis Wang\Downloads\taeimporterseed\TAE-Importer-Exporter-For-Elden-Ring-realreleasenumberone\ConsoleApp4\bin\Debug\ConsoleApp4.exe
+C:\Users\Francis Wang\Downloads\taeimporterseed\TAE-Importer-Exporter-For-Elden-Ring-realreleasenumberone\ConsoleApp4\bin\Debug\ConsoleApp4.pdb
+C:\Users\Francis Wang\Downloads\taeimporterseed\TAE-Importer-Exporter-For-Elden-Ring-realreleasenumberone\ConsoleApp4\bin\Debug\SoulsAssetPipeline.dll
+C:\Users\Francis Wang\Downloads\taeimporterseed\TAE-Importer-Exporter-For-Elden-Ring-realreleasenumberone\ConsoleApp4\bin\Debug\SoulsFormats.dll
+C:\Users\Francis Wang\Downloads\taeimporterseed\TAE-Importer-Exporter-For-Elden-Ring-realreleasenumberone\ConsoleApp4\bin\Debug\AssimpNet.dll
+C:\Users\Francis Wang\Downloads\taeimporterseed\TAE-Importer-Exporter-For-Elden-Ring-realreleasenumberone\ConsoleApp4\bin\Debug\TeximpNet.dll
+C:\Users\Francis Wang\Downloads\taeimporterseed\TAE-Importer-Exporter-For-Elden-Ring-realreleasenumberone\ConsoleApp4\bin\Debug\SoulsFormats.pdb
+C:\Users\Francis Wang\Downloads\taeimporterseed\TAE-Importer-Exporter-For-Elden-Ring-realreleasenumberone\ConsoleApp4\bin\Debug\SoulsFormats.xml
+C:\Users\Francis Wang\Downloads\taeimporterseed\TAE-Importer-Exporter-For-Elden-Ring-realreleasenumberone\ConsoleApp4\bin\Debug\SoulsAssetPipeline.pdb
+C:\Users\Francis Wang\Downloads\taeimporterseed\TAE-Importer-Exporter-For-Elden-Ring-realreleasenumberone\ConsoleApp4\obj\Debug\TAE_Seeder.csproj.AssemblyReference.cache
+C:\Users\Francis Wang\Downloads\taeimporterseed\TAE-Importer-Exporter-For-Elden-Ring-realreleasenumberone\ConsoleApp4\obj\Debug\TAE_Seeder.csproj.CoreCompileInputs.cache
+C:\Users\Francis Wang\Downloads\taeimporterseed\TAE-Importer-Exporter-For-Elden-Ring-realreleasenumberone\ConsoleApp4\obj\Debug\TAE_Seeder.csproj.CopyComplete
+C:\Users\Francis Wang\Downloads\taeimporterseed\TAE-Importer-Exporter-For-Elden-Ring-realreleasenumberone\ConsoleApp4\obj\Debug\ConsoleApp4.exe
+C:\Users\Francis Wang\Downloads\taeimporterseed\TAE-Importer-Exporter-For-Elden-Ring-realreleasenumberone\ConsoleApp4\obj\Debug\ConsoleApp4.pdb

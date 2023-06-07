@@ -1,12 +1,10 @@
-Requires oodle core and .net 6.0.
+Requires .net 6.0. Runs on .net 3.1 framework.
 
-Many mods feature greatly enhanced player speeds, however they do not enhance enemy speeds to compensate, leading to a fundamental balancing disparity. This is made worse by the fact that enemies in Elden Ring frequently have long delays. This tool aims to fix that by providing easy speed-up gradients to the start of enemy attacks and projectile spawns to make combat feel less one-sided. In the space of less than an hour, you can modify the startup speeds of every single enemy in the game. You can also do Wondrous Physick setup with this, adding in many enemy interactions to the game.
+Exports the player's anibnd as a JSON file. Does not appear to work on ClipGen made taes like a259, a custom tae I had made.
 
-Basic usage guide link: https://youtu.be/X8B83gmMmn8
+Imports not here yet.
 
-Many thanks to the following...
-
-Created with great help from Nordgaren (who wrote ~50% of the draft code and helped me learn Visual Studio) and Gomp-DS (whose GetRumbleCamIds https://github.com/GompDS/GetRumbleCamIds project was used as a base for this project).
+Credits:
 
 Meowmaritus for providing SoulsAssetPipeline (https://github.com/Meowmaritus/SoulsAssetPipeline), and for tips and tricks on other TAE-related things.
 

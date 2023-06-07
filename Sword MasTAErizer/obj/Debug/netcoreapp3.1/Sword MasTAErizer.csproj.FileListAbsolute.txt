@@ -1,0 +1,41 @@
+C:\Users\Francis Wang\source\repos\Sword MasTAErizer\Sword MasTAErizer\bin\Debug\netcoreapp3.1\Sword MasTAErizer.exe
+C:\Users\Francis Wang\source\repos\Sword MasTAErizer\Sword MasTAErizer\bin\Debug\netcoreapp3.1\Sword MasTAErizer.deps.json
+C:\Users\Francis Wang\source\repos\Sword MasTAErizer\Sword MasTAErizer\bin\Debug\netcoreapp3.1\Sword MasTAErizer.runtimeconfig.json
+C:\Users\Francis Wang\source\repos\Sword MasTAErizer\Sword MasTAErizer\bin\Debug\netcoreapp3.1\Sword MasTAErizer.runtimeconfig.dev.json
+C:\Users\Francis Wang\source\repos\Sword MasTAErizer\Sword MasTAErizer\bin\Debug\netcoreapp3.1\Sword MasTAErizer.dll
+C:\Users\Francis Wang\source\repos\Sword MasTAErizer\Sword MasTAErizer\bin\Debug\netcoreapp3.1\Sword MasTAErizer.pdb
+C:\Users\Francis Wang\source\repos\Sword MasTAErizer\Sword MasTAErizer\bin\Debug\netcoreapp3.1\SoulsAssetPipeline.dll
+C:\Users\Francis Wang\source\repos\Sword MasTAErizer\Sword MasTAErizer\bin\Debug\netcoreapp3.1\SoulsFormats.dll
+C:\Users\Francis Wang\source\repos\Sword MasTAErizer\Sword MasTAErizer\obj\Debug\netcoreapp3.1\Sword MasTAErizer.csproj.AssemblyReference.cache
+C:\Users\Francis Wang\source\repos\Sword MasTAErizer\Sword MasTAErizer\obj\Debug\netcoreapp3.1\Sword MasTAErizer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Francis Wang\source\repos\Sword MasTAErizer\Sword MasTAErizer\obj\Debug\netcoreapp3.1\Sword MasTAErizer.AssemblyInfoInputs.cache
+C:\Users\Francis Wang\source\repos\Sword MasTAErizer\Sword MasTAErizer\obj\Debug\netcoreapp3.1\Sword MasTAErizer.AssemblyInfo.cs
+C:\Users\Francis Wang\source\repos\Sword MasTAErizer\Sword MasTAErizer\obj\Debug\netcoreapp3.1\Sword MasTAErizer.csproj.CoreCompileInputs.cache
+C:\Users\Francis Wang\source\repos\Sword MasTAErizer\Sword MasTAErizer\obj\Debug\netcoreapp3.1\Sword MasTAErizer.csproj.CopyComplete
+C:\Users\Francis Wang\source\repos\Sword MasTAErizer\Sword MasTAErizer\obj\Debug\netcoreapp3.1\Sword MasTAErizer.dll
+C:\Users\Francis Wang\source\repos\Sword MasTAErizer\Sword MasTAErizer\obj\Debug\netcoreapp3.1\Sword MasTAErizer.pdb
+C:\Users\Francis Wang\source\repos\Sword MasTAErizer\Sword MasTAErizer\obj\Debug\netcoreapp3.1\Sword MasTAErizer.genruntimeconfig.cache
+C:\Users\Francis Wang\source\repos\Sword MasTAErizer\Sword MasTAErizer\bin\Debug\netcoreapp3.1\SapResources\CompressAnim\CompressAnim.exe
+C:\Users\Francis Wang\source\repos\Sword MasTAErizer\Sword MasTAErizer\bin\Debug\netcoreapp3.1\SapResources\FLVER2MaterialInfoBank\BankBB.xml
+C:\Users\Francis Wang\source\repos\Sword MasTAErizer\Sword MasTAErizer\bin\Debug\netcoreapp3.1\SapResources\FLVER2MaterialInfoBank\BankDS1.xml
+C:\Users\Francis Wang\source\repos\Sword MasTAErizer\Sword MasTAErizer\bin\Debug\netcoreapp3.1\SapResources\FLVER2MaterialInfoBank\BankDS1R.xml
+C:\Users\Francis Wang\source\repos\Sword MasTAErizer\Sword MasTAErizer\bin\Debug\netcoreapp3.1\SapResources\FLVER2MaterialInfoBank\BankDS2.xml
+C:\Users\Francis Wang\source\repos\Sword MasTAErizer\Sword MasTAErizer\bin\Debug\netcoreapp3.1\SapResources\FLVER2MaterialInfoBank\BankDS3.xml
+C:\Users\Francis Wang\source\repos\Sword MasTAErizer\Sword MasTAErizer\bin\Debug\netcoreapp3.1\SapResources\FLVER2MaterialInfoBank\BankSDT.xml
+C:\Users\Francis Wang\source\repos\Sword MasTAErizer\Sword MasTAErizer\bin\Debug\netcoreapp3.1\AssimpNet.dll
+C:\Users\Francis Wang\source\repos\Sword MasTAErizer\Sword MasTAErizer\bin\Debug\netcoreapp3.1\TeximpNet.dll
+C:\Users\Francis Wang\source\repos\Sword MasTAErizer\Sword MasTAErizer\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libassimp.so
+C:\Users\Francis Wang\source\repos\Sword MasTAErizer\Sword MasTAErizer\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libassimp.dylib
+C:\Users\Francis Wang\source\repos\Sword MasTAErizer\Sword MasTAErizer\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\assimp.dll
+C:\Users\Francis Wang\source\repos\Sword MasTAErizer\Sword MasTAErizer\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\assimp.dll
+C:\Users\Francis Wang\source\repos\Sword MasTAErizer\Sword MasTAErizer\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libFreeImage.so
+C:\Users\Francis Wang\source\repos\Sword MasTAErizer\Sword MasTAErizer\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libnvtt.so
+C:\Users\Francis Wang\source\repos\Sword MasTAErizer\Sword MasTAErizer\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libFreeImage.dylib
+C:\Users\Francis Wang\source\repos\Sword MasTAErizer\Sword MasTAErizer\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libnvtt.dylib
+C:\Users\Francis Wang\source\repos\Sword MasTAErizer\Sword MasTAErizer\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\FreeImage.dll
+C:\Users\Francis Wang\source\repos\Sword MasTAErizer\Sword MasTAErizer\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\nvtt.dll
+C:\Users\Francis Wang\source\repos\Sword MasTAErizer\Sword MasTAErizer\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\FreeImage.dll
+C:\Users\Francis Wang\source\repos\Sword MasTAErizer\Sword MasTAErizer\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\nvtt.dll
+C:\Users\Francis Wang\source\repos\Sword MasTAErizer\Sword MasTAErizer\bin\Debug\netcoreapp3.1\SoulsAssetPipeline.pdb
+C:\Users\Francis Wang\source\repos\Sword MasTAErizer\Sword MasTAErizer\bin\Debug\netcoreapp3.1\SoulsFormats.pdb
+C:\Users\Francis Wang\source\repos\Sword MasTAErizer\Sword MasTAErizer\bin\Debug\netcoreapp3.1\SoulsFormats.xml

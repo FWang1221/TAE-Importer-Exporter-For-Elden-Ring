@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<configuration>
+
+    <!-- Remember not to separate your lists with spaces, just commas, so "20,21,22" is valid but not "20, 21, 22" or "20 21 22". Why? Because I don't wanna program for that -->
+
+    <taes bounds = "40"></taes>
+    <anims boundsLower = "0" boundsUpper = "1000000"></anims>
+    <mode replacementExport = "false" exportEventList = "1,2,16"></mode>
+
+    <!-- replacementExport: Whether or not to export the whole tae with the bounds specified, best for find-and-replace operations like exporting everything in a set range then finding and increasing setturnspeeds or something-->
+    <!-- if exportEventList doesn't have nothing in it, it will only export those events specified when exporting. best for simply adding other events based on pre-existing events, like speeding up attack swings (adding event 608 where there is an event 1) -->
+    <!-- exportEventList will not activate unless replacementExport is false -->
+
+</configuration>

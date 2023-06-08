@@ -14,4 +14,4 @@ JKAnderson (and his crew's) SoulsFormats (https://github.com/JKAnderson/SoulsFor
 
 Hopefully I got everyone, if you felt like you were part of this project's creation just ping me on Discord or something and I'll add you.
 
-*new Hemalurgical Spike function is highly experimental, requires slightly edited TAE.Animation.CS from SAP.
+*new player miniheader stuff isn't that great but I did change the object for it, requires slightly edited TAE.Animation.CS from SAP but I need to find out how to get it.
